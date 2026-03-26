@@ -22,23 +22,66 @@ Approach: General to Detail
             * Input/Output Standard Attribute:
                 a. Layer 0
                     DATA INVOLVED (General): Project Metadata (project name, project description, language)
-                    ACTIONS: Input (form), Save (button, saving Input data), View (static, unchangeable form details), Edit (reopen the form & input data | if Next has been filled, reset everything in Next Layer), Next (proceed to further input)
+                    ACTIONS: Input (form), Save (button, saving Input data), View (static, unchangeable form details), Edit (reopen the form & input data | if Next has been filled, reset everything in Next Layer), Next (proceed to further Layer/Page)
                 b. Layer 1
-                    DATA INVOLVED (Single/Project Oriented): Resources (Object), Resources Name (String of Resources) Structure/Architecture Pattern (String of Resources/Multiple Choice)
-                    ACTIONS (Todo list like):
+                    DATA INVOLVED (Single/Project Oriented): Resources (Object), Resources Name (String of Resources), Structure/Architecture Pattern (String of Resources/Multiple Choice)
+                    ACTIONS (Todo list like): Input (form), Save (button, saving Input data), View (static, unchangeable form details), Add/Plus (creating new Input below saved data), Edit (reopen the form & input data | if Next has been filled, reset everything in Next Layer), Delete/Trash (removing the current View), Next (proceed to further Layer/Page), 
+                        +OptionalInput (for Architecture, need for further research, so the response for directory/project structure created based on this thing)
                 c. Layer 2
                     DATA INVOLVED (Multi-resource/Endpoints Oriented): Endpoint (Object),
                     Url (String of Endpoint), Method (String of Endpoint), Resource (Java-Injection), Action/Description (String of Endpoint)
-                    ACTIONS:
+                    ACTIONS: Input (form), Save (button, saving Input data), View (static, unchangeable form details), Add/Plus (creating new Input below saved data), Edit (reopen the form & input data | if Next has been filled, reset everything in Next Layer), Delete/Trash (removing the current View), Next (proceed to further Layer/Page),
+                        +OptionalInput (choices taken from existed resources, purposed to map or connect or pointing out access source) 
                 d. Layer 3
-                    DATA INVOLVED (Single/Endpoints Oriented): --Endpoint details, resources, and logic prescription
-                    ACTIONS: 
+                    DATA INVOLVED (Single/Endpoints Oriented): Passing and mapping the result form inputs
+                    ACTIONS: Edit & Export
             * Routing/System Schema:
                 - Layer 0: Project metadata description
                 - Layer 1: Project resource/entity definition
                 - Layer 2: Project business process definition
                 - Layer 3: Project product rules definition
-            * Status Codes (default/given dictionary):
+            * Final Sample Response:
+                {
+                    "project_name": "Project Title",
+                    "project_description": "This project made for ...",
+                    "resources": ["User", "Item"],
+                    "pattern": "layered",
+                    "architecture": "MVC",
+                    "endpoints": 
+                    [
+                        {
+                            "url": "[hostname]/v1/users/add",
+                            "method": "POST",
+                            "description": ""
+                        },
+                        {
+                            "url": "[hostname]/v1/users/viewAll",
+                            "method": "POST",
+                            "description": ""
+                            },
+                        {
+                            "url": "[hostname]/v1/users/delete",
+                            "method": "POST",
+                            "description": ""
+                            },
+                        {
+                            "url": "[hostname]/v1/items/add",
+                            "method": "POST",
+                            "description": ""
+                            },
+                        {
+                            "url": "[hostname]/v1/items/viewAll",
+                            "method": "POST",
+                            "description": ""
+                            },
+                        {
+                            "url": "[hostname]/v1/transaction",
+                            "method": "POST",
+                            "description": ""
+                            },
+                    ],
+                    "status code": [200, 400, 409, 500]
+                }
             * Data Type Choices (Canonical Type System):
                 - string
                 - number
@@ -55,8 +98,7 @@ Approach: General to Detail
         - Product development suggestion
             * Need to be applied by additional prompt such "create" or "generate" using AI Agent
     4. R&D (Mapping development)
-        - 
-    5. Master Program Sample Request/Response
+        -
 
 # MV 1 (Refined UI & Project Complexity) Plan:
     1. Terms & Requirement
