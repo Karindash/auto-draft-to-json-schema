@@ -1,0 +1,25 @@
+/* Main Layout (Flex) */
+.main-content {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.editor-side {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 1200px) {
+  .main-content { flex-direction: column; }
+  .preview-sticky { width: 100% !important; position: static !important; }
+}
+
+/* Layer Navigation */
+.layer-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}

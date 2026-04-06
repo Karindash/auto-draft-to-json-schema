@@ -1,0 +1,23 @@
+/* Flex Utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 0.25rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.flex-1 { flex: 1; }
+.flex-none { flex: none; }
+.w-full { width: 100%; }
+
+/* Method Badges */
+.method-badge {
+  font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800;
+  padding: 4px 8px; border-radius: 6px; text-transform: uppercase;
+}
+.method-badge.GET { background: #eff6ff; color: #1d4ed8; border: 1px solid #dbeafe; }
+.method-badge.POST { background: #ecfdf5; color: #059669; border: 1px solid #d1fae5; }
+.method-badge.PUT { background: #fffbeb; color: #b45309; border: 1px solid #fef3c7; }
+.method-badge.DELETE { background: #fff1f2; color: #be123c; border: 1px solid #ffe4e6; }

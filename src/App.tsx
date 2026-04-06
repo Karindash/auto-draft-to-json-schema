@@ -1,32 +1,67 @@
 import React from 'react';
 import './App.css';
-import { SchemaProvider, useSchemaStore } from './core/store/SchemaContext';
-import { ProjectMetaEditor } from './features/project-meta/components/ProjectMetaEditor';
-import { EntityList } from './features/entities/components/EntityList';
-import { ServiceList } from './features/services/components/ServiceList';
-import { DTOList } from './features/dtos/components/DTOList';
-import { EndpointTable } from './features/output-viewer/components/EndpointTable';
-import { Header } from './shared/components/Header';
-import { JSONTerminal } from './features/output-viewer/components/JSONTerminal';
+import { SchemaProvider, useSchemaStore } from './global/store/SchemaContext';
+import { ProjectMetaEditor } from './features/project-meta/ProjectMetaEditor';
+import { ResourceList } from './features/resources/ResourceList';
+import { ServiceList } from './features/services/ServiceList';
+import { EndpointTable } from './features/output-viewer/EndpointTable';
+import { Header } from './components/organisms/Header';
+import { JSONTerminal } from './features/output-viewer/JSONTerminal';
+import { Button } from './components/atoms/Button';
+import { Title } from './components/atoms/Title';
 
 const AppContent: React.FC = () => {
-  const { error } = useSchemaStore();
+  const { currentLayer, actions, error } = useSchemaStore();
 
   if (error) {
-    return <div className="error-screen"><h1>Error</h1><pre>{error}</pre></div>;
+    return <div className="error-screen"><Title level={1}>Error</Title><pre>{error}</pre></div>;
   }
+
+  const layers = [
+    { title: "Layer 0: Project", component: <ProjectMetaEditor /> },
+    { title: "Layer 1: Resources", component: <ResourceList /> },
+    { title: "Layer 2: Business Process", component: <ServiceList /> },
+    { title: "Layer 3: Product Rules", component: <EndpointTable /> }
+  ];
 
   return (
     <div className="container">
       <Header />
 
+      <nav className="layer-stepper">
+        {layers.map((l, i) => (
+          <div 
+            key={i} 
+            className={`step ${currentLayer === i ? 'active' : ''} ${currentLayer > i ? 'completed' : ''}`}
+            onClick={() => actions.setLayer(i)}
+          >
+            <span className="step-number">{i}</span>
+            <span className="step-title">{l.title.split(': ')[1]}</span>
+          </div>
+        ))}
+      </nav>
+
       <main className="main-content">
         <section className="editor-side">
-          <ProjectMetaEditor />
-          <EntityList />
-          <ServiceList />
-          <EndpointTable />
-          <DTOList />
+          {layers[currentLayer].component}
+          
+          <div className="layer-navigation">
+            <Button 
+              variant="neutral" 
+              onClick={actions.prevLayer}
+              disabled={currentLayer === 0}
+            >
+              Back
+            </Button>
+            <Button 
+              variant="neutral"
+              className="primary-action" 
+              onClick={actions.nextLayer}
+              disabled={currentLayer === layers.length - 1}
+            >
+              Next
+            </Button>
+          </div>
         </section>
 
         <JSONTerminal />

@@ -1,0 +1,74 @@
+/* Buttons Base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Variants */
+.btn-neutral {
+  background: #fff;
+  color: var(--text-main);
+  border-color: var(--border);
+}
+.btn-neutral:hover { background: #f8fafc; border-color: var(--text-muted); }
+
+/* Special style for prominent neutral buttons if needed, 
+   but for now we follow the instruction to keep it simple */
+.btn-neutral.primary-action {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  border-color: transparent;
+}
+
+.btn-delete {
+  background: #fff1f2;
+  color: var(--danger);
+  border-color: #fecaca;
+}
+.btn-delete:hover { background: var(--danger); color: #fff; border-color: var(--danger); }
+
+.btn-add {
+  background: #ecfdf5;
+  color: #059669;
+  border-color: #10b981;
+}
+.btn-add:hover { background: #059669; color: #fff; }
+
+.btn-icon {
+  background: #f1f5f9;
+  color: var(--text-main);
+  padding: 0;
+}
+.btn-icon:hover { background: #e2e8f0; }
+
+/* Sizes */
+.size-xs { padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px; gap: 0.25rem; }
+.size-sm { padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: 6px; }
+.size-md { padding: 0.75rem 1.5rem; font-size: 0.95rem; }
+.size-lg { padding: 1rem 2rem; font-size: 1.1rem; }
+
+/* Icon Only Fix */
+.btn-icon-only {
+  width: auto;
+  aspect-ratio: 1 / 1;
+  padding: 0.5rem !important;
+}
+
+.btn-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
