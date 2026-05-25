@@ -15,6 +15,9 @@ interface SchemaContextType {
     setLayer: (layer: number) => void;
     nextLayer: () => void;
     prevLayer: () => void;
+    saveProject: () => void;
+    resetProject: () => void;
+    deleteProject: () => void;
   };
 }
 
@@ -31,10 +34,6 @@ export const SchemaProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(schema));
-  }, [schema]);
-
-  useEffect(() => {
     const handleError = (event: ErrorEvent) => setError(event.message);
     window.addEventListener('error', handleError);
     return () => window.removeEventListener('error', handleError);
@@ -44,6 +43,27 @@ export const SchemaProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const resourceActions = useResourceActions(setSchema);
   const serviceActions = useServiceActions(setSchema);
 
+  const saveProject = () => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(schema));
+    alert('Project saved successfully!');
+  };
+
+  const resetProject = () => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      setSchema(JSON.parse(saved));
+    } else {
+      setSchema(initialSchema);
+    }
+  };
+
+  const deleteProject = () => {
+    if (window.confirm('Are you sure you want to delete this project from local storage?')) {
+      localStorage.removeItem(STORAGE_KEY);
+      setSchema(initialSchema);
+    }
+  };
+
   const actions = useMemo(() => ({
     ...metadataActions,
     ...resourceActions,
@@ -51,7 +71,10 @@ export const SchemaProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     setLayer: (layer: number) => setCurrentLayer(layer),
     nextLayer: () => setCurrentLayer(prev => Math.min(prev + 1, 3)),
     prevLayer: () => setCurrentLayer(prev => Math.max(prev - 1, 0)),
-  }), [metadataActions, resourceActions, serviceActions]);
+    saveProject,
+    resetProject,
+    deleteProject,
+  }), [metadataActions, resourceActions, serviceActions, schema]);
 
   const value = useMemo(() => ({ schema, currentLayer, error, actions }), [schema, currentLayer, error, actions]);
 

@@ -2,21 +2,21 @@ import type { ProjectSchema } from '../types/schema';
 
 export const initialSchema: ProjectSchema = {
   project_metadata: {
-    name: "My Awesome Project",
-    description: "A new project generated with Drafter",
+    name: "Master Draft",
+    description: "Sketch schemes, Imagine your own tools. Flexibility among inability.",
     version: "1.0.0",
     stack: {
-      framework: "React",
-      language: "Spring Boot (Java)",
-      database: "PostgreSQL",
+      language: '',
+      framework: '',
       pattern: '',
-      architecture: ''
+      architecture: '',
+      database: ''
     }
   },
   resources: [
     {
-      name: "User",
-      description: "Application users",
+      name: '',
+      description: "Application Scheme",
       attributes: [
         {
           field_name: "id",

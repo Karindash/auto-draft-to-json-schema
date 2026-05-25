@@ -1,7 +1,4 @@
 {
-  "patterns": ["Layered", "Microservices", "Event-Driven", "Serverless", "Hexagonal"],
   "structures": ["MVC", "MVVM", "Clean Architecture", "Onion Architecture", "Monolithic"],
-  "frameworks": ["React", "Angular", "Vue", "Svelte", "Next.js", "Spring Boot", "Express", "FastAPI"],
-  "language": ["C++", "C", "Java", "Python"],
   "database": ["Oracle", "PostgreSQL", "MongoDB", "MySQL"]
 }

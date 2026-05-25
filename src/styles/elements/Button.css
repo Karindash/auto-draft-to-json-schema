@@ -3,7 +3,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
@@ -55,10 +55,10 @@
 .btn-icon:hover { background: #e2e8f0; }
 
 /* Sizes */
-.size-xs { padding: 0.25rem 0.5rem; font-size: 0.7rem; border-radius: 4px; gap: 0.25rem; }
-.size-sm { padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: 6px; }
-.size-md { padding: 0.75rem 1.5rem; font-size: 0.95rem; }
-.size-lg { padding: 1rem 2rem; font-size: 1.1rem; }
+.size-xs { padding: 0.2rem 0.4rem; font-size: 0.6rem; border-radius: 3px; gap: 0.25rem; }
+.size-sm { padding: 0.3rem 0.6rem; font-size: 0.8rem; border-radius: 4px; }
+.size-md { padding: 0.4rem 0.8rem; font-size: 0.95rem; }
+.size-lg { padding: 0.6rem 1.2rem; font-size: 1.1rem; }
 
 /* Icon Only Fix */
 .btn-icon-only {
