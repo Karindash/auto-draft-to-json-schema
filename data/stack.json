@@ -1,0 +1,154 @@
+{
+  "language": [
+    {
+      "name": "Java",
+      "description": "The industry standard for enterprise-level applications and large-scale systems.",
+      "frameworks": [
+        {
+          "name": "Spring Boot",
+          "structures": ["Modular", "Layered (Package by Layer)", "Feature-based (Package by Feature)"],
+          "patterns": ["MVC", "Service-Repository", "Hexagonal", "Microservices"]
+        },
+        {
+          "name": "Jakarta EE / Quarkus",
+          "structures": ["Monolithic", "Cloud-native Microservices"],
+          "patterns": ["CDI", "Active Record", "CQRS"]
+        }
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "description": "The language of the web, essential for interactive frontends and versatile backends.",
+      "frameworks": [
+        {
+          "name": "Express.js",
+          "structures": ["Flat", "MVC-like", "Router-Controller-Service"],
+          "patterns": ["Middleware", "Asynchronous Callback/Promise", "Factory"]
+        },
+        {
+          "name": "React",
+          "structures": ["Atomic Design", "Feature-based", "Component-based"],
+          "patterns": ["Hooks", "Context API", "Redux/Flux", "Higher-Order Components"]
+        },
+        {
+          "name": "Next.js",
+          "structures": ["App Router (Standard)", "Pages Router (Legacy)"],
+          "patterns": ["Server-Side Rendering (SSR)", "Static Site Generation (SSG)", "Server Actions"]
+        }
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "description": "A type-safe version of JavaScript, providing better tooling and fewer bugs for large projects.",
+      "frameworks": [
+        {
+          "name": "NestJS",
+          "structures": ["Modular (Default)", "Microservices", "Monolith"],
+          "patterns": ["Dependency Injection", "Decorators", "Clean Architecture", "Onion"]
+        },
+        {
+          "name": "Angular",
+          "structures": ["Modular (NgModules)", "Standalone Components"],
+          "patterns": ["Observables (RxJS)", "Dependency Injection", "MVVM"]
+        }
+      ]
+    },
+    {
+      "name": "C++",
+      "description": "High-performance language used for systems, game engines, and resource-intensive apps.",
+      "frameworks": [
+        {
+          "name": "Qt",
+          "structures": ["Project-based", "Module-based"],
+          "patterns": ["Signals and Slots", "Model-View", "Observer"]
+        },
+        {
+          "name": "Crow / Drogon",
+          "structures": ["Header-only (Crow)", "MVC (Drogon)"],
+          "patterns": ["RAII", "Asynchronous I/O", "Singleton"]
+        }
+      ]
+    },
+    {
+      "name": "Golang",
+      "description": "Google's language for simple, reliable, and efficient cloud and network services.",
+      "frameworks": [
+        {
+          "name": "Gin / Echo / Fiber",
+          "structures": ["Flat", "Standard Go Layout (cmd, internal, pkg)"],
+          "patterns": ["Middleware", "Composition over Inheritance", "Concurrency (Goroutines)"]
+        },
+        {
+          "name": "Buffalo",
+          "structures": ["Full-stack MVC"],
+          "patterns": ["Convention over Configuration", "ORM (Pop)"]
+        }
+      ]
+    },
+    {
+      "name": "Python",
+      "description": "The most popular language for AI, data science, and rapid web prototyping.",
+      "frameworks": [
+        {
+          "name": "FastAPI",
+          "structures": ["Flat", "Layered (app, routers, schemas, crud)"],
+          "patterns": ["Dependency Injection", "Asynchronous (async/await)", "Pydantic Models"]
+        },
+        {
+          "name": "Django",
+          "structures": ["MVT (Model-View-Template)", "App-based modularity"],
+          "patterns": ["Active Record (ORM)", "Middleware", "Signals"]
+        },
+        {
+          "name": "Flask",
+          "structures": ["Single Module", "Blueprints (Modular)"],
+          "patterns": ["Factory Method", "Application Context"]
+        }
+      ]
+    },
+    {
+      "name": "Rust",
+      "description": "Modern system language focusing on safety, speed, and concurrency without a garbage collector.",
+      "frameworks": [
+        {
+          "name": "Axum / Actix-web",
+          "structures": ["Standard Cargo Layout", "Modular (crates/modules)"],
+          "patterns": ["Ownership/Borrowing", "Zero-cost Abstractions", "Async/Await", "Type-safe Routing"]
+        }
+      ]
+    },
+    {
+      "name": "C#",
+      "description": "Powerful and versatile language for Windows apps, games (Unity), and web services.",
+      "frameworks": [
+        {
+          "name": "ASP.NET Core",
+          "structures": ["MVC", "Minimal APIs", "Clean Architecture (Onion)"],
+          "patterns": ["Dependency Injection", "Repository/Unit of Work", "LINQ", "Middleware"]
+        }
+      ]
+    },
+    {
+      "name": "PHP",
+      "description": "The most accessible language for web development, powering a huge portion of the internet.",
+      "frameworks": [
+        {
+          "name": "Laravel",
+          "structures": ["MVC (Standard)", "Domain Driven Design (DDD)", "Modular"],
+          "patterns": ["Active Record (Eloquent)", "Service Container", "Facades", "Middleware"]
+        }
+      ]
+    },
+    {
+      "name": "Kotlin",
+      "description": "A modern, concise alternative to Java, officially recommended for Android development.",
+      "frameworks": [
+        {
+          "name": "Ktor",
+          "structures": ["Feature-based", "Modular"],
+          "patterns": ["Coroutines", "DSL (Domain Specific Language)", "Extension Functions"]
+        }
+      ]
+    }
+  ]
+}
